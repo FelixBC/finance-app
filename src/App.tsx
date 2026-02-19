@@ -5,7 +5,10 @@ function App() {
   return (
     <>
       <div className="container">
-        <Header className="">Investment Calculator</Header>
+        <Header className="card__header">Investment Calculator</Header>
+         <div className="card__button">
+          
+         </div>
       </div>
     </>
   );
