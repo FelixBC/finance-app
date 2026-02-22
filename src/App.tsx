@@ -11,8 +11,9 @@ function App() {
   const type = "number";
   const className = "card__input";
 
-  const handleInitial = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleResults = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
+    
   };
 
   return (

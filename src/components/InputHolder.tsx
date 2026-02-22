@@ -1,15 +1,44 @@
 import { useState } from "react";
 
 type InputHolderProps = {
-  type: string;
-  className: string;
-  value: number;
   onChange: () => void;
 };
 
-const InputHolder: React.FC<InputHolderProps> = ({type, className, value, onChange}) => {
+const InputHolder: React.FC<InputHolderProps> = ({ onChange }) => {
+  const [input, setInput] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
+
   return (
-      <input type={type} className={className} value={value} onChange={onChange} />
+    <>
+      <input
+        className="card__input"
+        type="number"
+        value={}
+        onChange={onChange}
+      />
+      <input
+        className="card__input"
+        type="number"
+        value={}
+        onChange={onChange}
+      />
+      <input
+        className="card__input"
+        type="number"
+        value={}
+        onChange={onChange}
+      />
+      <input
+        className="card__input"
+        type="number"
+        value={}
+        onChange={onChange}
+      />
+    </>
   );
 };
 
