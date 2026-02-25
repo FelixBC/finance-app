@@ -1,21 +1,11 @@
 import type { userInputProps } from "../types/types";
+
 type InputHolderProps = {
   userInput: userInputProps;
-  setUserInput: React.Dispatch<React.SetStateAction<userInputProps>>;
+  onChange: (inputIdentifier: string, newValue: number) => void;
 };
 
-const InputHolder: React.FC<InputHolderProps> = ({
-  setUserInput,
-  userInput,
-}) => {
-  const handleUserInput = (inputIdentifier: string, newValue: number) => {
-    setUserInput((prevUserInput) => {
-      return {
-        ...prevUserInput,
-        [inputIdentifier]: newValue,
-      };
-    });
-  };
+const InputHolder: React.FC<InputHolderProps> = ({ userInput, onChange }) => {
   return (
     <section id="card__input-section">
       <div>
@@ -26,10 +16,7 @@ const InputHolder: React.FC<InputHolderProps> = ({
             type="number"
             value={userInput.initialInvestment}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              handleUserInput(
-                "initialInvestment",
-                Number(event.target.value) || 0,
-              )
+              onChange("initialInvestment", Number(event.target.value) || 0)
             }
           />
         </p>
@@ -40,10 +27,7 @@ const InputHolder: React.FC<InputHolderProps> = ({
             type="number"
             value={userInput.annualInvestment}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              handleUserInput(
-                "annualInvestment",
-                Number(event.target.value) || 0,
-              )
+              onChange("annualInvestment", Number(event.target.value) || 0)
             }
           />
         </p>
@@ -55,7 +39,7 @@ const InputHolder: React.FC<InputHolderProps> = ({
             type="number"
             value={userInput.duration}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              handleUserInput("duration", Number(event.target.value) || 0)
+              onChange("duration", Number(event.target.value) || 0)
             }
           />
         </p>
@@ -66,7 +50,7 @@ const InputHolder: React.FC<InputHolderProps> = ({
             type="number"
             value={userInput.expectedReturn}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              handleUserInput("expectedReturn", Number(event.target.value) || 0)
+              onChange("expectedReturn", Number(event.target.value) || 0)
             }
           />
         </p>

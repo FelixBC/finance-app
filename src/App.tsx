@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import InputHolder from "./components/InputHolder";
 import type { userInputProps } from "./types/types";
 import { useState } from "react";
-import ResultsTable from "./components/ResultsTable"
+import ResultsTable from "./components/ResultsTable";
 
 function App() {
   const [userInput, setUserInput] = useState<userInputProps>({
@@ -13,14 +13,21 @@ function App() {
     duration: 10,
   });
 
-
+  const handleUserInput = (inputIdentifier: string, newValue: number) => {
+    setUserInput((prevUserInput) => {
+      return {
+        ...prevUserInput,
+        [inputIdentifier]: newValue,
+      };
+    });
+  };
   return (
     <>
       <div className="container">
         <Header className="card__header">Investment Calculator</Header>
         <div className="card__input-container">
-          <InputHolder userInput={userInput} setUserInput={setUserInput}/>
-          <ResultsTable />
+          <InputHolder userInput={userInput} onChange={handleUserInput} />
+          <ResultsTable input={userInput} />
         </div>
       </div>
     </>
