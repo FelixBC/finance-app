@@ -3,7 +3,7 @@ import type { userInputProps } from "../types/types";
 import "../util/investment";
 import { calculateInvestmentResults, formatter } from "../util/investment";
 import Header from "./Header";
-import "./ResultsTable.css"
+import "./ResultsTable.css";
 
 type ResultsTableProps = {
   input: userInputProps;
@@ -24,8 +24,8 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ input }) => {
 
   return (
     <section className="table__result-container">
-      <Header className="table__results-header"> Results Table</Header>
-      <table className="table__tbody">
+      <Header>Results Table</Header>
+      <table>
         <thead className="table__thead">
           <tr>
             <th>Year</th>
@@ -37,7 +37,7 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ input }) => {
             <th>Annual Investment</th>
           </tr>
         </thead>
-       {tableDataOfResults}
+        <tbody className="table__tbody">{tableDataOfResults}</tbody>
       </table>
     </section>
   );

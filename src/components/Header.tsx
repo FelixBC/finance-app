@@ -1,8 +1,7 @@
 import React from "react";
-import "./Header.css"
+import "./Header.css";
 type headerProps = {
   children: string;
-  className: string;
 };
 
 const Header: React.FC<headerProps> = ({ children }) => {

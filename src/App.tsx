@@ -24,9 +24,11 @@ function App() {
   return (
     <>
       <div className="container">
-        <img src={logo} alt="investment-logo" className="header__img" />;
-        <Header className="card__header">Investment Calculator</Header>
-        <div className="card__input-container">
+        <div>
+          <img src={logo} alt="investment-logo" />;
+          <Header>Investment Calculator</Header>
+        </div>
+        <div>
           <InputHolder userInput={userInput} onChange={handleUserInput} />
         </div>
         <div>
