@@ -41,3 +41,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.center{
+align-items: center;
+padding-top: 10rem;
+}

@@ -21,6 +21,7 @@ function App() {
       };
     });
   };
+  const inputIsValid: boolean = userInput.duration > 0;
   return (
     <>
       <div className="container">
@@ -32,7 +33,8 @@ function App() {
           <InputHolder userInput={userInput} onChange={handleUserInput} />
         </div>
         <div>
-          <ResultsTable input={userInput} />
+          {!inputIsValid && <p className="center">Duration should be mayor than zero!</p>}
+          {inputIsValid && <ResultsTable input={userInput} />}
         </div>
       </div>
     </>
