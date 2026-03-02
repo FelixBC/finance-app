@@ -13,7 +13,7 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ input }) => {
   const results = calculateInvestmentResults(input);
   const tableDataOfResults: Iterable<ReactNode> = results.map(
     (currentResult) => (
-      <tr>
+      <tr key={currentResult.year}>
         <td>{currentResult.year}</td>
         <td>{formatter.format(currentResult.interest)}</td>
         <td>{formatter.format(currentResult.valueEndOfYear)}</td>
