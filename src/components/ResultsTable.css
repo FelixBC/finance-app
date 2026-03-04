@@ -6,13 +6,11 @@
   border-spacing: 1rem;
   display:flex;
   flex-direction: column;
-
 }
 
 .table__thead {
   font-size: 1rem;
   color: #83e6c0;
-
 }
 
 .table__tbody {
